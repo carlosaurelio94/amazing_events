@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="shortcut icon" href="./assets/img/logo_ae.png" type="image/x-icon">
+    <title>Contacts | Amazing Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navMain navbar navbar-expand-lg bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html"><img src="./assets/img/logo_ae.png" alt="" class="imgLogo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link border border-1 rounded-4 bg-primary text-light fs-4 border-secondary" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link border border-1 rounded-4 bg-primary text-light fs-4 border-secondary" href="./upcoming.html">Upcoming Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link border border-1 rounded-4 bg-primary text-light fs-4 border-secondary" href="./past.html">Past Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active border border-1 rounded-4 text-dark fs-4 border-secondary" aria-current="page" href="#">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link border border-1 rounded-4 bg-primary text-light fs-4 border-secondary" href="./stats.html">Stats</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="bg-danger d-flex justify-content-around align-items-center">
+        <a href="./past.html" class="text-decoration-none text-light"> <img src="./assets/img/flecha_izquierda.png" alt="flecha a la izquierda"> </a>
+        <h1 class="text-light fs-1">Contact us</h1>
+        <a href="./stats.html" class="text-decoration-none text-light"> <img src="./assets/img/flecha_derecha.png" alt="flecha a la derecha"> </a>
+    </header>
+    <main class="d-flex justify-content-center align-items-center">
+        <div id="app" class="col-11">
+
+            <div >
+                <form class="d-flex flex-column align-items-center gap-2 p-2">
+                    <fieldset class="d-flex flex-column col-5">
+                        <label for="name">Name:</label>
+                        <input type="text" class="" id="name">
+                    </fieldset>
+                    <fieldset class="d-flex flex-column col-5">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" class="">
+                    </fieldset>
+                    <fieldset class="d-flex flex-column col-5">
+                        <label for="message">Message:</label>
+                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    </fieldset>
+                    <fieldset class="d-flex justify-content-end col-5">
+                        <input type="submit" value="Submit" @click="contacto()" class="align-self-end border border-3 rounded-4 bg-primary text-light fs-4" id="contacto">
+                    </fieldset>
+                </form>
+            </div>
+            
+        </main>
+    </div>
+    <footer class=" bg-danger d-flex flex-column align-items-center justify-content-between">
+        <nav class="nav">
+            <a class="nav-link" href="https://www.facebook.com" target="_blank"><img src="./assets/img/facebook_logo.png" alt="" class="fbLogo"></a>
+            <a class="nav-link" href="https://www.instagram.com" target="_blank"><img src="./assets/img/instagram_logo.png" alt="" class="igLogo"></a>
+            <a class="nav-link" href="https://www.whatsapp.com" target="_blank"><img src="./assets/img/ws_logo.png" alt="" class="wsLogo"></a>
+        </nav>
+        <p class="text-light fs-3 text-center">Made by: Carlos Aurelio Rodríguez Contreras</p>
+        <div>
+            <p class="fs-3 text-light text-center">Cohort 34</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/data.js"></script>
+
+    <script src="./assets/js/index.js"></script>
+
+</body>
+
+</html>

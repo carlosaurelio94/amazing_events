@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.imgLogo {
+    width: 150px;
+}
+
+.card-link {
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.navMain {
+    min-height: 20vh;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+}
+
+header {
+    min-height: 10vh;
+    background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);}
+
+main {
+    min-height: 67vh;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+}
+
+.check {
+    min-height: 10vh;
+}
+
+footer {
+    min-height: 13vh;
+    background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+}
+
+.fbLogo, .igLogo, .wsLogo {
+    width: 50px;
+}
+
+.active {
+    background-color: white;
+}
+
+.cine {
+    width: 500px; 
+    height: 180px;
+}
+
+.col-4 {
+    font-weight: 500;
+}
+
+th {
+    font-weight: bolder;
+}
+
+thead {
+    border-collapse: collapse;
+}
+
+tr th {
+    border: none;
+}
+
+#concierto {
+    height: 298px;
+    width: 540px;
+}
+
+.card {
+    width: 18rem;
+}
+
+.cohort {
+    margin-right: 2rem;
+}
+

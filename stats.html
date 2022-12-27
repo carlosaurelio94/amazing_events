@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="shortcut icon" href="./assets/img/logo_ae.png" type="image/x-icon">
+    <title>Stats | Amazing Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navMain navbar navbar-expand-lg bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html"><img src="./assets/img/logo_ae.png" alt="" class="imgLogo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link border border-1 rounded-4 bg-primary text-light fs-4 border-secondary"
+                            href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link border border-1 rounded-4 bg-primary text-light fs-4 border-secondary"
+                            href="./upcoming.html">Upcoming Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link border border-1 rounded-4 bg-primary text-light fs-4 border-secondary"
+                            href="./past.html">Past Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link border border-1 rounded-4 bg-primary text-light fs-4 border-secondary"
+                            aria-current="page" href="./contact.html">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active border border-1 rounded-4 text-dark fs-4 border-secondary"
+                            href="#">Stats</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="bg-danger d-flex justify-content-around align-items-center">
+        <a href="./contact.html" class="text-decoration-none text-light"> <img src="./assets/img/flecha_izquierda.png"
+                alt="flecha a la izquierda"> </a>
+        <h1 class="text-light fs-1">Stats</h1>
+        <a href="./index.html" class="text-decoration-none text-light"> <img src="./assets/img/flecha_derecha.png"
+                alt="flecha a la derecha"> </a>
+    </header>
+    <div id="app">
+        <main class="d-flex justify-content-center align-items-center">
+            <div class="tablas">
+                <table class="m-3 col-10 bg-light">
+                    <thead class="">
+                        <tr class="border-collapse">
+                            <th class="fs-3 bg-secondary text-dark">Events statistics</th>
+                            <th class="fs-3 bg-secondary"></th>
+                            <th class="fs-3 bg-secondary"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="border border-dark text-center fs-3 bg-primary text-light">Events with the
+                                highest percentage of attendance</th>
+                            <th class="border border-dark text-center fs-3 bg-primary text-light">Events with the
+                                lowest percentage of attendance</th>
+                            <th class="border border-dark text-center fs-3 bg-primary text-light">Event with larger
+                                capacity</th>
+                        </tr>
+                        <tr>
+                            <td class="border border-dark text-dark fs-4">{{espacio1()}}</td>
+                            <td class="border border-dark text-dark fs-4">{{espacio2()}}</td>
+                            <td class="border border-dark text-dark fs-4">{{espacio3()}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody id="primera">
+                    </tbody>
+                    <tbody class="">
+                        <tr class="border-collapse">
+                            <th class="fs-3 bg-secondary text-dark">Upcoming events statistics by category</th>
+                            <th class="fs-3 bg-secondary"></th>
+                            <th class="fs-3 bg-secondary"></th>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th class="border border-dark text-center fs-3 bg-primary text-light col-4">Categories</th>
+                            <th class="border border-dark text-center fs-3 bg-primary text-light col-4">Revenues</th>
+                            <th class="border border-dark text-center fs-3 bg-primary text-light col-4">Percentage of
+                                attendance</th>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr v-for="evento in terminacionTabla(eventosUpcoming)">
+                            <td class="border border-dark text-dark fs-4">{{evento.categoria}}</td>
+                            <td class="border border-dark text-dark fs-4">$ {{modificarNumero(evento.gananciasTotales)}}</td>
+                            <td class="border border-dark text-dark fs-4">{{evento.porcentajeTotal.toFixed(2)}} %</td>
+                        </tr>
+                    </tbody>
+                    <tbody id="segunda">
+                    </tbody>
+                    <tbody class="">
+                        <tr class="border-collapse">
+                            <th class="fs-3 bg-secondary text-dark">Past events statistics by category</th>
+                            <th class="fs-3 bg-secondary"></th>
+                            <th class="fs-3 bg-secondary"></th>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th class="border border-dark text-center fs-3 bg-primary text-light col-4">Categories</th>
+                            <th class="border border-dark text-center fs-3 bg-primary text-light col-4">Revenues</th>
+                            <th class="border border-dark text-center fs-3 bg-primary text-light col-4">Percentage of
+                                attendance</th>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr v-for="evento in terminacionTabla(eventosPast)">
+                            <td class="border border-dark text-dark fs-4">{{evento.categoria}}</td>
+                            <td class="border border-dark text-dark fs-4">$ {{modificarNumero(evento.gananciasTotales)}}</td>
+                            <td class="border border-dark text-dark fs-4">{{evento.porcentajeTotal.toFixed(2)}} %</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+    <footer class=" bg-danger d-flex flex-column align-items-center justify-content-around">
+        <nav class="nav d-flex align-items-center p-3" id="navFooter">
+            <a class="nav-link" href="https://www.facebook.com" target="_blank"><img
+                    src="./assets/img/facebook_logo.png" alt="" class="fbLogo"></a>
+            <a class="nav-link" href="https://www.instagram.com" target="_blank"><img
+                    src="./assets/img/instagram_logo.png" alt="" class="igLogo"></a>
+            <a class="nav-link" href="https://www.whatsapp.com" target="_blank"><img src="./assets/img/ws_logo.png"
+                    alt="" class="wsLogo"></a>
+        </nav>
+        <p class="text-light fs-3 text-center">Made by: Carlos Aurelio Rodríguez Contreras</p>
+        <div>
+            <p class="fs-3 text-light text-center">Cohort 34</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/data.js"></script>
+
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
